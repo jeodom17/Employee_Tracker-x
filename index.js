@@ -34,12 +34,36 @@ function handleInitialQuestion() {
         {
             type: "list",
             name: "userOptions",
-            message: "Please choose from the following options to get started."
+            message: "Please choose from the following options to get started.",
             choices: [
-                {
-                    name:
-                    value:
-                },
+              {
+                name: "View All Departments",
+                value: "VIEW_DEPARTMENTS"
+              },
+              {
+                name: "View All Roles",
+                value: "VIEW_ROLES"
+              },
+              {
+                name: "View All Employees",
+                value: "VIEW_EMPLOYEES"
+              },
+              {
+                name: "Add a Department",
+                value: "ADD_DEPARTMENT"
+              },
+              {
+                name: "Add a Role",
+                value: "ADD_ROLE"
+              },
+              {
+                name: "Add an Employee",
+                value: "ADD_EMPLOYEE"
+              },
+              {
+                name: "Update an Employee Role",
+                value: "UPDATE_EMPLOYEE_ROLE"
+              },
             ]
         }
 
