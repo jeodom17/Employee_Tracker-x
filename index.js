@@ -103,34 +103,89 @@ function handleInitialQuestion() {
 //*---------------------------------------------------
 
 function handleViewDepartments() {
-
+  db.handleFindDepartments()
+    .then(([rows]) => {
+      let departments = rows;
+      console.table(departments);
+    })
+    .then(() => handleInitialQuestion());
 
 }
 
 function handleViewRoles() {
-
+  db.handleFindRoles()
+    .then(([rows]) => {
+      let roles = rows;
+      console.table(roles);
+    })
+    .then(() => handleInitialQuestion());
 
 }
 
 function handleViewEmployees() {
-
+  db.handleFindEmployees()
+    .then(([rows]) => {
+      let employees = rows;
+      console.table(employees);
+    })
+    .then(() => handleInitialQuestion());
 
 }
 
 function handleAddDepartment() {
-
+  prompt([
+    {
+      name: "name",
+      message: "Enter the NEW Department Name."
+    }
+  ])
+    .then(res => {
+      let name = res;
+      db.handleNewDepartment(name)
+        .then(() => console.log(`${name.name} Added `))
+        .then(() => handleInitialQuestion())
+    })
 
 }
 
 function handleAddRole() {
 
+  db.handleFindDepartments()
+    .then(([rows]) => {
+      let departments = rows;
+      const departmentChoices = departments.map(({ id, name }) => ({
+        name: name,
+        value: id
+      }));
 
-}
+  prompt([
+    {
+      name: "name",
+      message: "Enter the name of the NEW Role."
+    },
+    {
+      name: "salary",
+      message: "Enter the salary of the NEW role."
+    },
+    {
+      type: "list",
+      name: "department_id",
+      message: "Choose the department that the NEW role belongs to.",
+      choices: departmentChoices
+    }
+  ]).then(res => {
+      let name = res;
+      db.handleNewRole(name)
+        .then(() => console.log(`${name.name} Added `))
+        .then(() => handleInitialQuestion())
+    })
+
+},
 
 function handleAddEmployee() {
 
 
-}
+},
 
 function handleUpdateEmployeeRole() {
 
