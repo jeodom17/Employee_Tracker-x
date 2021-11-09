@@ -67,47 +67,72 @@ function handleInitialQuestion() {
             ]
         }
 
-
-    ]).then((answers) => {
-        // Use user feedback for... whatever!!
-      })
-      .catch((error) => {
-        if (error.isTtyError) {
-          // Prompt couldn't be rendered in the current environment
-        } else {
-          // Something else went wrong
-        }
-      });
-}
-
-
-
-
 //* function called per user choice -- use switch case for each user answer option --> case "choices value (in name value pair)": --> call function(); --> break; --> next user option
 
+    ]).then(res => {
+      let userChoice = res.userChoice;
+      switch (userChoice) {
+        case "VIEW_DEPARTMENTS":
+          handleViewDepartments();
+          break;
+        case "VIEW_ROLES":
+          handleViewRoles();
+          break;
+        case "VIEW_EMPLOYEES":
+          handleViewEmployees();
+          break;
+        case "ADD_DEPARTMENT":
+          handleAddDepartment();
+          break;
+        case "ADD_ROLE":
+          handleAddRole();
+          break; 
+        case "ADD_EMPLOYEE":
+          handleAddEmployee();
+          break; 
+        case "UPDATE_EMPLOYEE_ROLE":
+          handleUpdateEmployeeRole();
+          break;  
+      }
+    }
+    )
+  };
+
+//*---------------------------------------------------
+  //^ Functions for all user choice options
+//*---------------------------------------------------
+
+function handleViewDepartments() {
 
 
+}
+
+function handleViewRoles() {
 
 
+}
+
+function handleViewEmployees() {
 
 
+}
+
+function handleAddDepartment() {
 
 
+}
+
+function handleAddRole() {
 
 
+}
 
-//^ Functions for all user choice options
-
-
-
+function handleAddEmployee() {
 
 
+}
+
+function handleUpdateEmployeeRole() {
 
 
-
-
-
-
-
-
-
+}
