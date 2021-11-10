@@ -36,12 +36,18 @@ handleNewRole(role) {
 
 
 //* add a new employee
-
+handleNewEmployee(employee) {
+    return this.connection.promise().query("INSERT INTO employee SET ?", employee);
+  }
 
 
 
 //* update employee role
-
-
+handleUpdateRole(employeeId, roleId) {
+    return this.connection.promise().query(
+      "UPDATE employee SET role_id = ? WHERE id = ?",
+      [roleId, employeeId]
+    );
+  }
 
 }
