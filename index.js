@@ -185,10 +185,10 @@ function handleAddRole() {
       message: "Choose the department that the NEW role belongs to.",
       choices: departmentChoices
     }
-  ]).then(res => {
-      let name = res;
-      db.handleNewRole(name)
-        .then(() => console.log(`${name.name} Added `))
+  ])
+    .then(role => {
+      db.handleNewRole(role)
+        .then(() => console.log(`${role.title} Added `))
         .then(() => handleInitialQuestion())
     })
 
