@@ -24,7 +24,9 @@ handleFindEmployees() {
   }
 
 //* add a new department
-
+handleNewDepartment(department) {
+    return this.connection.promise().query("INSERT INTO department SET ?", department);
+  }
 
 
 //* add a new role
