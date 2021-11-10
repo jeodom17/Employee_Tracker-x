@@ -71,8 +71,8 @@ function handleInitialQuestion() {
 //* function called per user choice -- use switch case for each user answer option --> case "choices value (in name value pair)": --> call function(); --> break; --> next user option
 
     ]).then(res => {
-      let userChoice = res.userChoice;
-      switch (userChoice) {
+      let choice = res.choice;
+      switch (choice) {
         case "VIEW_DEPARTMENTS":
           handleViewDepartments();
           break;
