@@ -102,6 +102,7 @@ function handleInitialQuestion() {
   //^ Functions for all user choice options
 //*---------------------------------------------------
 
+// view departments
 function handleViewDepartments() {
   db.handleFindDepartments()
     .then(([rows]) => {
@@ -112,6 +113,7 @@ function handleViewDepartments() {
 
 }
 
+// view all roles
 function handleViewRoles() {
   db.handleFindRoles()
     .then(([rows]) => {
@@ -122,6 +124,7 @@ function handleViewRoles() {
 
 }
 
+// view all employees
 function handleViewEmployees() {
   db.handleFindEmployees()
     .then(([rows]) => {
@@ -132,6 +135,7 @@ function handleViewEmployees() {
 
 }
 
+// add new department
 function handleAddDepartment() {
   prompt([
     {

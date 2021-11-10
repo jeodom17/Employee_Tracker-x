@@ -30,7 +30,9 @@ handleNewDepartment(department) {
 
 
 //* add a new role
-
+handleNewRole(role) {
+    return this.connection.promise().query("INSERT INTO role SET ?", role);
+  }
 
 
 //* add a new employee
