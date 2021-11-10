@@ -264,7 +264,7 @@ function handleAddEmployee() {
 };
 
 // update an employee's role
-function handleUpdateRole() {
+function handleUpdateEmployeeRole() {
   db.handleFindEmployees()
     .then(([rows]) => {
       let employees = rows;
