@@ -1,8 +1,8 @@
 -- Create Database --
-DROP DATABASE IF EXISTS employeetrack;
-CREATE DATABASE employeetrack;
+DROP DATABASE IF EXISTS employees;
+CREATE DATABASE employees;
 
-USE employeetrack;
+USE employees;
 
 -- Create Tables --
 CREATE TABLE department (
