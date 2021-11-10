@@ -71,7 +71,7 @@ function handleInitialQuestion() {
 //* function called per user choice -- use switch case for each user answer option --> case "choices value (in name value pair)": --> call function(); --> break; --> next user option
 
     ]).then(res => {
-      let choice = res.choice;
+      let choice = res.userOptions;
       switch (choice) {
         case "VIEW_DEPARTMENTS":
           handleViewDepartments();
@@ -110,6 +110,7 @@ function handleViewDepartments() {
   db.handleFindDepartments()
     .then(([rows]) => {
       let departments = rows;
+      console.log("\n");
       console.table(departments);
     })
     .then(() => handleInitialQuestion());
@@ -121,6 +122,7 @@ function handleViewRoles() {
   db.handleFindRoles()
     .then(([rows]) => {
       let roles = rows;
+      console.log("\n");
       console.table(roles);
     })
     .then(() => handleInitialQuestion());
@@ -132,6 +134,7 @@ function handleViewEmployees() {
   db.handleFindEmployees()
     .then(([rows]) => {
       let employees = rows;
+      console.log("\n");
       console.table(employees);
     })
     .then(() => handleInitialQuestion());
