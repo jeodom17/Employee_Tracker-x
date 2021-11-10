@@ -51,3 +51,5 @@ handleUpdateRole(employeeId, roleId) {
   }
 
 }
+
+module.exports = new DB(connection);
