@@ -1,10 +1,11 @@
 const colors = require('colors');
 const { prompt } = require("inquirer");
-const { inherits } = require('util');
 const db = require("./db");
-const chalk = require('chalk');
 const logo = require("asciiart-logo");
+const chalk = require('chalk');
 require("console.table");
+
+const mysql = require("mysql2");
 
 
 init();
@@ -34,7 +35,7 @@ function handleInitialQuestion() {
         {
             type: "list",
             name: "userOptions",
-            message: "Please choose from the following options to get started.",
+            message: chalk`{redBright Please choose from the following options to get started.}`,
             choices: [
               {
                 name: "View All Departments",

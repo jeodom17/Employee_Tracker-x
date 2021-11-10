@@ -1,4 +1,6 @@
 const connection = require("./connection");
+const mysql = require("mysql2");
+
 
 class DB {
     constructor(connection) {
