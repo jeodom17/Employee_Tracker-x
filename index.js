@@ -93,7 +93,9 @@ function handleInitialQuestion() {
           break; 
         case "UPDATE_EMPLOYEE_ROLE":
           handleUpdateEmployeeRole();
-          break;  
+          break; 
+        default:
+          quit(); 
       }
     }
     )
