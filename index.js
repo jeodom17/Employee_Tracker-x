@@ -152,6 +152,7 @@ function handleAddDepartment() {
 
 }
 
+// add a new role
 function handleAddRole() {
 
   db.handleFindDepartments()
@@ -187,6 +188,7 @@ function handleAddRole() {
 
 };
 
+// add new employee
 function handleAddEmployee() {
   prompt([
     {
@@ -255,6 +257,7 @@ function handleAddEmployee() {
         })
 };
 
+// update an employee's role
 function handleUpdateRole() {
   db.handleFindEmployees()
     .then(([rows]) => {
@@ -299,8 +302,8 @@ function handleUpdateRole() {
     
 }
 
-//* Exit  application
+//* Exit the application
 function quit() {
   console.log("Adios");
   process.exit();
-}
+};
