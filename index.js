@@ -168,7 +168,6 @@ function handleAddRole() {
         name: name,
         value: id
       }));
-    })
 
   prompt([
     {
@@ -191,6 +190,7 @@ function handleAddRole() {
         .then(() => console.log(`${role.title} Added `))
         .then(() => handleInitialQuestion())
     })
+  })
 
 };
 
